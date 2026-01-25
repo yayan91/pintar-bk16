@@ -748,7 +748,7 @@
         const dim = []; document.querySelectorAll('input[name="dimensi"]:checked').forEach(c => dim.push(c.value));
         const kar = []; document.querySelectorAll('input[name="karakteristik"]:checked').forEach(c => kar.push(c.value));
         const topikRaw = fd.get('topik');
-        const topikPrompt = `${topikRaw} (INSTRUKSI KHUSUS: ateri Deskriptif yang profesional dan informatif harus sesuai dengan topik dan kegiatan ARKA nya serta sesuai dengan sasaran siswanya dengan bahasa yang formal sesuai siswa dan saat dibaca oleh pengawas dan kepala sekolah juga seperti tulisan sendiri. ARKA: AKTIFITAS, REFLEKSI, KONSEP, APLIKASI. Sertakan konten LKPD json object)`;
+        const topikPrompt = `${topikRaw} (INSTRUKSI KHUSUS: Materi Deskriptif yang profesional dan informatif harus sesuai dengan topik dan kegiatan ARKA nya serta sesuai dengan sasaran siswanya dengan bahasa yang formal sesuai siswa dan saat dibaca oleh pengawas dan kepala sekolah juga seperti tulisan sendiri. ARKA: AKTIFITAS, REFLEKSI, KONSEP, APLIKASI. Sertakan konten LKPD json object)`;
         const reqData = { 
             tahun: fd.get('tahun'), semester: fd.get('semester'), 
             jenis: fd.get('jenis'), bidang: fd.get('bidang'), komponen: fd.get('komponen'),
@@ -927,3 +927,4 @@
 </body>
 
 </html>
+
