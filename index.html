@@ -1021,7 +1021,7 @@
         document.getElementById('epSemester').innerText = req.semester || '';
         document.getElementById('epTanggal').innerText = tglCetakStr;
         document.getElementById('epObserver').innerText = req.guruNama;
-        document.getElementById('epTtdTanggal').innerText = tglCetakStr;
+        document.getElementById('epTtdTanggal').innerText = "..........................................";
         document.getElementById('epTtdGuru').innerText = req.guruNama;
         document.getElementById('epTtdNip').innerText = currentUser?.nip || '-';
         
@@ -1038,7 +1038,7 @@
         // Data Evaluasi Hasil
         document.getElementById('ehTopik').innerText = cleanTopic(req.topik);
         document.getElementById('ehKelas').innerText = req.kelas;
-        document.getElementById('ehTtdTanggal').innerText = tglCetakStr;
+        document.getElementById('ehTtdTanggal').innerText = "..........................................";
 
         const arrHasil = data.angket_hasil || []; 
         document.getElementById('ehTableBody').innerHTML = arrHasil.map((item, index) => `
@@ -1055,7 +1055,7 @@
         document.getElementById('ansKelas').innerText = req.kelas;
         document.getElementById('ansSemester').innerText = req.semester || '';
         document.getElementById('ansTanggal').innerText = tglCetakStr;
-        document.getElementById('ansTtdTanggal').innerText = tglCetakStr;
+        document.getElementById('ansTtdTanggal').innerText = "..........................................";
         
         // Data Guru & Kepsek
         document.getElementById('ansGuru').innerText = req.guruNama;
