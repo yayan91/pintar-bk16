@@ -995,9 +995,15 @@
         const tindakLanjutData = data.tindak_lanjut || ["Menunggu hasil evaluasi lebih lanjut..."];
         document.getElementById('rplTindakLanjut').innerHTML = tindakLanjutData.map(t => `<li>${t}</li>`).join('');
 
-        document.getElementById('ttdGuru').innerText = req.guruNama; document.getElementById('ttdNipGuru').innerText = currentUser?.nip || '-';
-        const today = new Date(); document.getElementById('ttdTanggal').innerText = today.toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'});
-        const qrData = `VALID:${req.topik}|${req.guruNama}|${today.getTime()}`;
+		document.getElementById('ttdGuru').innerText = req.guruNama; document.getElementById('ttdNipGuru').innerText = currentUser?.nip || '-';
+
+		// Variabel today tetap dipertahankan untuk kebutuhan QR Code
+		const today = new Date(); 
+		// Ini logika baru untuk tanggal tanda tangan (mengambil dari form input)
+		const tglTandaTangan = req.tanggal ? new Date(req.tanggal).toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'}) : today.toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'});
+		document.getElementById('ttdTanggal').innerText = tglTandaTangan;
+
+		const qrData = `VALID:${req.topik}|${req.guruNama}|${today.getTime()}`;
         document.getElementById('qrValidation').src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrData)}`;
 
         document.getElementById('lkpdTopik').innerText = cleanTopic(req.topik);
