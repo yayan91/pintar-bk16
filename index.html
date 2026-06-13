@@ -321,6 +321,25 @@
 	}
 	.btn-del:hover { background: #ef4444; color: white; }
 	.dark .btn-del { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.2); color: #f87171; }
+	/* Header doclist — sembunyikan di HP, tampil di laptop */
+	@media (max-width: 767px) {
+	  #docHeaderRow { display: none !important; }
+	  .doc-btn-wrap { 
+		justify-content: center !important; 
+		padding-left: 0 !important;
+	  }
+	  .doc-btn-wrap .btn-open,
+	  .doc-btn-wrap .btn-del {
+		flex: 1;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+	  }
+	}
+	@media (min-width: 768px) {
+	  #docHeaderRow { display: flex !important; }
+	}
+	
 	
   </style>
 </head>
